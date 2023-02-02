@@ -26,6 +26,7 @@
 		285E86962989F3DF0066C625 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 285E86952989F3DF0066C625 /* FirebaseAuth */; };
 		285E86982989F3DF0066C625 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 285E86972989F3DF0066C625 /* FirebaseFirestore */; };
 		285E869A2989F3DF0066C625 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 285E86992989F3DF0066C625 /* FirebaseStorage */; };
+		2866010B298B5E6D00C9D8AC /* Messanger in Resources */ = {isa = PBXBuildFile; fileRef = 2866010A298B5E6D00C9D8AC /* Messanger */; };
 		288ADF0B298B5BB1008ACA85 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 288ADF0A298B5BB1008ACA85 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		285E868D29874F730066C625 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		285E868F29874F8F0066C625 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		285E8692298958150066C625 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2866010A298B5E6D00C9D8AC /* Messanger */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Messanger; sourceTree = "<group>"; };
 		288ADF0A298B5BB1008ACA85 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				285E864D29874BDC0066C625 /* Messanger */,
+				2866010A298B5E6D00C9D8AC /* Messanger */,
 				285E866429874BE00066C625 /* MessangerTests */,
 				285E866E29874BE00066C625 /* MessangerUITests */,
 				285E864C29874BDC0066C625 /* Products */,
@@ -329,6 +332,7 @@
 				288ADF0B298B5BB1008ACA85 /* GoogleService-Info.plist in Resources */,
 				285E865829874BDF0066C625 /* Assets.xcassets in Resources */,
 				285E865629874BDC0066C625 /* Main.storyboard in Resources */,
+				2866010B298B5E6D00C9D8AC /* Messanger in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
