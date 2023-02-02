@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
         scrollView.clipsToBounds = true
         return scrollView
     }()
+	
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -66,7 +67,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		title = "Log In"
-        view.backgroundColor = .systemGray2
+        view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register",
 															style: .done,
 															target: self,
@@ -116,14 +117,15 @@ class LoginViewController: UIViewController {
 			alertUserLoginError()
 			return
 		}
-		func loginUser() {
-			Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-				guard let strongSelf = self else { return }
-				// ...
+		// Firebase Login
+		FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: { authResult, error in
+			guard let result = authResult, error == nil else {
+				return
 			}
+			let user = result.user
+		})
+		
 		}
-	}
-    
 	func alertUserLoginError() {
 		let alert = UIAlertController(title: "Failed to Log In",
 									  message: "Please enter all information to log in",
@@ -133,24 +135,15 @@ class LoginViewController: UIViewController {
 									  handler: nil))
 		present(alert, animated: true)
 	}
+	@objc private func didTapRegister() {
+			let vc = RegisterViewController()
+			vc.title = "Create Account"
+			navigationController?.pushViewController(vc, animated: true)
+		}
+	}
+    
 	
-    @objc private func didTapRegister() {
-        let vc = RegisterViewController()
-        vc.title = "Create Account"
-        navigationController?.pushViewController(vc, animated: true)
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+	
 
 extension LoginViewController: UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
